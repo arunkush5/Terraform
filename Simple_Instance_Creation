@@ -1,0 +1,13 @@
+provider "aws" {
+region = "ap-south-1"
+profile = "TerraUser" 
+}
+resource "aws_instance" "first" {
+  ami           = "ami-005956c5f0f757d37"
+  instance_type = "t2.micro"
+  key_name="task01"
+  
+  tags = {
+    Name = "TerraOS"
+  }
+}
